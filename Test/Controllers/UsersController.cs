@@ -36,41 +36,56 @@ namespace Test.Controllers
             return new OkObjectResult(user);
         }
 
-       
-        /*[HttpPost]
-        public IActionResult Post([FromBody]User user)
-        {
-            // TODO: доделай по аналогии
-            return null;
-        }*/
 
         [HttpPost]
-        public IActionResult Post([FromBody]User user)
+        public async Task<IActionResult> Post([FromBody]User user)
         {
             // TODO: доделай по аналогии
-            _userManager.Users.
-            return null;
+            if (user == null)
+            {
+                return BadRequest();
+            }
+            IdentityResult result = await _userManager.CreateAsync(user);
+
+            return new OkObjectResult(user);
         }
 
 
         [HttpPut]
-        public IActionResult Put([FromBody]User user)
+        public async Task<IActionResult> Put([FromBody]User model)
         {
             // TODO: доделай по аналогии
-            return null;
+            User user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+            user.Name = model.Name;
+            user.Patronymic = model.Patronymic;
+            user.Surname = model.Surname;
+            user.BirthDate = model.BirthDate;
+            IdentityResult result = await _userManager.UpdateAsync(user);
+
+            return new OkObjectResult(user);
         }
 
-    
+
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Del(string id)
         {
             // TODO: доделай по аналогии
-            //User user = await _userManager.DeleteAsync(id);
-            /*if ()
-            {
+            User user = await _userManager.FindByIdAsync(id);
 
-            }*/
-            return null;
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            IdentityResult result = await _userManager.DeleteAsync(user);
+
+            return new OkObjectResult(user);
+
         }
     }
 }

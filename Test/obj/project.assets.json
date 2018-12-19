@@ -12534,11 +12534,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\Test\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\Professional\\Documents\\Github\\Agrrs.TestTask.Web\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\Professional\\source\\repos\\Test\\Test\\Test.csproj",
+      "projectPath": "C:\\Users\\Professional\\Documents\\Github\\Agrrs.TestTask.Web\\Test\\Test.csproj",
       "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Professional\\source\\repos\\Test\\Test\\obj\\",
+      "outputPath": "C:\\Users\\Professional\\Documents\\Github\\Agrrs.TestTask.Web\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
