@@ -55,7 +55,7 @@ namespace Test.Controllers
         public async Task<IActionResult> Put([FromBody]User model)
         {
             // TODO: доделай по аналогии
-            User user = await _userManager.FindByNameAsync(User.Identity.Name);
+            User user = await _userManager.FindByEmailAsync(User.Identity.Name);
 
             if (user == null)
             {
