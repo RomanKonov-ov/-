@@ -52,10 +52,10 @@ namespace Test.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody]User model)
+        public async Task<IActionResult> Put(string id, [FromBody]User model)
         {
             // TODO: доделай по аналогии
-            User user = await _userManager.FindByEmailAsync(User.Identity.Name);
+            User user = await _userManager.FindByIdAsync(id);
 
             if (user == null)
             {
